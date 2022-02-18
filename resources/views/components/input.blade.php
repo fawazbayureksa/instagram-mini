@@ -9,7 +9,6 @@
         @else 
             value="{{old($name)}}"
         @endisset --}}
-        
         required autocomplete="" autofocus>
 
         @error($name)

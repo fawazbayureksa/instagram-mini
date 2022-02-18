@@ -7,15 +7,13 @@
             <div class="card">
                 <div class="card-header">Edit Profil {{$user->username}}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/user/edit">
                         @csrf
-
+                        @method('PUT')
                         {{-- Diambil dari components/input --}}
+                      <x-input name="fullname" label="Full Name" type="text" value="{{$user->fullname}}" />
                       <x-input name="username" label="Username" type="text" value="{{$user->username}}"/>
-                      <x-input name="email" label="Alamat E-mail" type="email" value="{{$user->email}}" />
-                      <x-input name="bio" label="Biodata" type="text" value="{{$user->bio}}" />
-                   
-
+                      <x-input name="bio" label="Biodata" type="text" value="{{$user->bio}}"/>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
