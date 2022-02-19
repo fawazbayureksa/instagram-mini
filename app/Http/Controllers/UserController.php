@@ -19,13 +19,31 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required|alpha_dash|min:3|max:15|unique:users,username,'.$user->id,
             'fullname' => 'max:30',
-            'bio' => 'max:144'
+            'bio' => 'max:144',
+            'avatar' => 'image|mimes:jpeg,jpg,png'
         ]);
         
+        $imageName = $user->avatar;
+        
+        // Jika ada request avatar untuk di ubah/diganti
+        if ($request->foto)
+        {   
+            // maka mengambil nama avatar nya dari request->avatar
+            $avatar_img = $request->foto;
+            // memberi nama ke file avatar
+            $imageName = $user->username.'-'.time().'.'.$avatar_img->extension();
+            // menentukan lokasi upload file 
+            $avatar_img->move(public_path('images/avatar'),$imageName);
+        }else{
+
+        }
+
         $user->update([
             'username' => $request->username,
             'fullname' => $request->fullname,
-            'bio' => $request->bio
+            'bio' => $request->bio,
+            'avatar' => $imageName
+
         ]);
 
         return redirect('/home');
