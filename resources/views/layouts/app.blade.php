@@ -36,7 +36,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
+                            <a href="upload" class="nav-link"><i class="bi bi-house-fill fs-4"></i></i></a>
+                        </li>
+                        <li class="nav-item">
                             <a href="upload" class="nav-link"><i class="bi bi-plus-square-fill fs-4"></i></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload" class="nav-link"><i class="bi bi-cursor-fill fs-4"></i></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload" class="nav-link"><i class="bi bi-compass-fill fs-4"></i></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upload" class="nav-link"><i class="bi bi-heart-fill fs-4"></i></i></a>
                         </li>
                     </ul>
 
