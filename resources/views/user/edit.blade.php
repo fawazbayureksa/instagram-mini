@@ -1,12 +1,4 @@
-<style>
-    img {
-         width: 150px;
-        height: 150px;
-         border-radius: 50%;
- /* sumber: https://www.posciety.com/cara-membuat-gambar-bulat-melingkar-bundar-html-css/ */
-    }
 
-</style>
 
 
 @extends('layouts.app')
@@ -18,8 +10,10 @@
             <div class="card">
                 <div class="card-header">Edit Profil {{$user->username}}</div>
                 <div class="card-body text-center">
-                    <img class="img-responsive mb-4" src="{{asset('images/avatar/'.Auth::user()->avatar)}}" alt="Foro profil {{Auth::user()->fullname}}">
-                    <form method="POST" action="/user/edit" enctype="multipart/form-data">
+
+                      <x-avatar :user="$user"/>
+                      
+                      <form method="POST" action="/user/edit" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         {{-- Diambil dari components/input --}}

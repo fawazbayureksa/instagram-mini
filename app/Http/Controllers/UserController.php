@@ -34,10 +34,7 @@ class UserController extends Controller
             $imageName = $user->username.'-'.time().'.'.$avatar_img->extension();
             // menentukan lokasi upload file 
             $avatar_img->move(public_path('images/avatar'),$imageName);
-        }else{
-
         }
-
         $user->update([
             'username' => $request->username,
             'fullname' => $request->fullname,
