@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -42,18 +43,15 @@
                 </div>
             </div>
             <div class="card mb-2">
-                <div class="card-body">
-                    <h3>POST</h3>
-                </div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-body">
-                    <h3>POST 2</h3>
-                </div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-body">
-                    <h3>POST 3</h3>
+                <div class="card-body ">
+                   @foreach ($post as $key)
+                   <div class="text-center">
+                       <img class="img-responsive mb-3" width="525" 
+                       src={{asset('images/posts/'.$key->image)}} 
+                       alt="Foto Postingan {{Auth::user()->fullname}}">
+                    </div>
+                   <p class="mx-5">{{$key->caption}}</p>
+                   @endforeach
                 </div>
             </div>
         </div>

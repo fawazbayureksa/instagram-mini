@@ -9,7 +9,7 @@
                 <div class="card-header">Upload Foto</div>
                 <div class="card-body text-center">
 
-                      <form method="POST" action="/post/edit" enctype="multipart/form-data">
+                      <form method="post" action="/post" enctype="multipart/form-data">
                         @csrf
                        
                         {{-- Diambil dari components/input --}}
