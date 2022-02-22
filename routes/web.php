@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('user/edit','UserController@edit');
 Route::put('user/edit','UserController@update');
+
+Route::resource('post',PostController::class);
