@@ -20,24 +20,6 @@
                    <div class="mx-2">
                        <x-fotoprofil :user="$user"/>
                    </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
-                   <div class="mx-2">
-                       <x-fotoprofil :user="$user"/>
-                   </div>
 
                   </div>
                 </div>
@@ -45,8 +27,9 @@
             <div class="card mb-2">
                 <div class="card-body ">
                    @foreach ($post as $key)
+                   <x-fotonav :user="$user" />
                    <div class="text-center">
-                       <img class="img-responsive mb-3" width="525" 
+                       <img class="img-responsive mb-3" width="100%" 
                        src={{asset('images/posts/'.$key->image)}} 
                        alt="Foto Postingan {{Auth::user()->fullname}}">
                     </div>
@@ -58,7 +41,6 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    
                     <div class="d-flex align-items-center">
                         <div>
                             <x-fotoprofil :user="$user"/>

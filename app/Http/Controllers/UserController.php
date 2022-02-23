@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     //
+
+    public function show($username){
+
+        $userpost = User::where('username',$username)->first();
+        if(!$userpost) abort(404);
+            // dd($userpost);
+        $user = Auth::user();
+        $post = Post::all();
+        return view('user.profil',compact('userpost','user','post'));
+
+    }
 
     public function edit(){
         $user = Auth::user();
