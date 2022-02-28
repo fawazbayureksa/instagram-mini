@@ -8,7 +8,7 @@
                 <div class="col-md-3">
                     <x-avatar :user="$userpost" />
                 </div>
-                <div class="col-md-8 pt-3">
+                <div class="col-md-8 pt-3 mb-3">
                     <h3 class="mx-5">{{$userpost->username}}</h3>
                     <div class="mx-3 d-flex justify-content-around">
                         <p>Kiriman 0</p>
@@ -19,16 +19,17 @@
                         <p class="mx-5">{{$user->fullname}} <br> {{$user->bio}}</p>
                     </div>
                 </div>
-               
-                @foreach ($post as $key)
-               
-              
-                    <img class="img-responsive mb-3" width="100%" 
-                    src={{asset('images/posts/'.$key->image)}} 
-                    alt="Foto Postingan {{Auth::user()->fullname}}">
-                    <a href=""></a>
-               
-                @endforeach
+               <hr>
+               <div class="row">
+                   @foreach ($post as $key)
+                   <div class="col-md-4">
+                       <img class="img-responsive mb-3" width="100%" 
+                       src={{asset('images/posts/'.$key->image)}} 
+                       alt="Foto Postingan {{Auth::user()->fullname}}">
+                       <a href=""></a>
+                    </div>
+                    @endforeach
+               </div>
                  
             </div>
 

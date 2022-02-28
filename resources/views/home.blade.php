@@ -24,19 +24,23 @@
                   </div>
                 </div>
             </div>
-            <div class="card mb-2">
+            @foreach ($post as $key)
+            <div class="card mb-3">
                 <div class="card-body ">
-                   @foreach ($post as $key)
-                   <x-fotonav :user="$user" />
+                   <div class="d-flex align-items-center">
+                       <x-fotonav :user="$user" />
+                        <p class="mx-2">fawazbayureksa_</p>
+                   </div>
+
                    <div class="text-center">
                        <img class="img-responsive mb-3" width="100%" 
                        src={{asset('images/posts/'.$key->image)}} 
                        alt="Foto Postingan {{Auth::user()->fullname}}">
                     </div>
                    <p class="mx-5">{{$key->caption}}</p>
-                   @endforeach
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="col-md-3">
             <div class="card">
