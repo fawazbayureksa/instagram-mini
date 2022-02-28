@@ -15,3 +15,9 @@ https://ui-avatars.com/
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## REF
+<p align="center">
+Thanks To
+<a href="sekolahkoding.com">Sekolah Koding</a>
+</p>
