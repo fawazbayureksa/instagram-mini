@@ -58,4 +58,10 @@ class UserController extends Controller
 
         return redirect('/home');
     }
+
+    public function follow(){
+        $user = Auth::user();
+
+        dd($user->following);
+    }
 }

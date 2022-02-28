@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/follow','UserController@follow');
 
 Route::get('@{username}','UserController@show');
 Route::middleware('auth')->group(function(){
