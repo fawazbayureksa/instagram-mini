@@ -3,13 +3,30 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="row">
                 <div class="col-md-3">
                     <x-avatar :user="$userpost" />
                 </div>
                 <div class="col-md-8 pt-3 mb-3">
-                    <h3 class="mx-5">{{$userpost->username}}</h3>
+                    <div class="d-flex align-items-center my-3">
+                        <h3 class="ms-5 me-2">{{$userpost->username}}</h3>
+
+                        {{-- Jika user login berada di profil sendiri tombol follow tidak ada , sebaliknya --}}
+                        @if (Auth::user()->id == $userpost->id)
+
+                        @else
+                            <a href="/follow/{{$userpost->id}}" 
+                                class="
+                                {{Auth::user()->following->contains($userpost->id) ? 'btn btn-outline-dark' : 'btn btn-primary'}}
+                                     btn-md rounded"
+                                >
+                                {{-- jika sudah di follow maka akan tertulis unfollow , sebaliknya --}}
+                                {{Auth::user()->following->contains($userpost->id) ? 'unfollow' : 'follow'}}
+                            </a> 
+                        @endif
+
+                    </div>
                     <div class="mx-3 d-flex justify-content-around">
                         <p>Kiriman 0</p>
                         <p>Pengikut 0</p>

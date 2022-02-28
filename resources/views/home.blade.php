@@ -49,7 +49,7 @@
                         <div>
                             <x-fotoprofil :user="$user"/>
                         </div>
-                        <a href="#" class="text-decoration-none text-black mx-3">
+                        <a href="/{{'@'.Auth::user()->username}}" class="text-decoration-none text-black mx-3">
                             <h5>{{Auth::user()->username}}</h5>
                         </a>
                     </div>

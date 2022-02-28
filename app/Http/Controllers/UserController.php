@@ -59,9 +59,22 @@ class UserController extends Controller
         return redirect('/home');
     }
 
-    public function follow(){
+    public function follow($following_id){
+
+
         $user = Auth::user();
 
-        dd($user->following);
+        // dd($user->following);
+
+        // Cek Apakah sudah di follow atau belum
+        if ($user->following->contains($following_id)){
+
+            $user->following()->detach($following_id);
+        }
+        else{
+
+            $user->following()->attach($following_id);
+        }
+        
     }
 }

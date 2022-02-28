@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $post = Post::all();
+        $post = Post::all()->sortByDesc('id');
         return view('home',['user' => $user , 'post' => $post]);
     }
 }
