@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container px-5">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     REXXA
@@ -47,7 +47,7 @@
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a href="upload" class="nav-link"><i class="bi bi-house fs-3"></i></i></a>
+                                <a href="home" class="nav-link"><i class="bi bi-house fs-3"></i></i></a>
                             </li>
                             <li class="nav-item">
                                 <a href="post/create" class="nav-link"><i class="bi bi-plus-square fs-3"></i></i></a>
@@ -89,8 +89,9 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
+                                
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a href="user/edit" class="dropdown-item">Edit Profil</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -108,7 +109,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main style="margin-top: 6em">
             @yield('content')
         </main>
     </div>

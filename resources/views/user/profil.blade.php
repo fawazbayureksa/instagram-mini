@@ -23,7 +23,7 @@
                <div class="row">
                    @foreach ($post as $key)
                    <div class="col-md-4">
-                       <img class="img-responsive mb-3" width="100%" 
+                       <img class="img-responsive mb-3" width="100%" height="100%"
                        src={{asset('images/posts/'.$key->image)}} 
                        alt="Foto Postingan {{Auth::user()->fullname}}">
                        <a href=""></a>
