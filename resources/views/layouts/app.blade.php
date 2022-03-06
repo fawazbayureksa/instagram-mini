@@ -47,19 +47,19 @@
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a href="home" class="nav-link"><i class="bi bi-house fs-3"></i></i></a>
+                                <a href="/home" class="nav-link"><i class="bi bi-house fs-3"></i></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="post/create" class="nav-link"><i class="bi bi-plus-square fs-3"></i></i></a>
+                                <a href="/post/create" class="nav-link"><i class="bi bi-plus-square fs-3"></i></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="upload" class="nav-link"><i class="bi bi-cursor fs-3"></i></i></a>
+                                <a href="/upload" class="nav-link"><i class="bi bi-cursor fs-3"></i></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="upload" class="nav-link"><i class="bi bi-compass fs-3"></i></i></a>
+                                <a href="#" class="nav-link"><i class="bi bi-compass fs-3"></i></i></a>
                             </li>
                             <li class="nav-item">
-                                <a href="upload" class="nav-link"><i class="bi bi-heart fs-3"></i></i></a>
+                                <a href="#" class="nav-link"><i class="bi bi-heart fs-3"></i></i></a>
                             </li>
                         </ul>
 
