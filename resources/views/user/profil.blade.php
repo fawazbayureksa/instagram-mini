@@ -16,21 +16,33 @@
                         @if (Auth::user()->id == $userpost->id)
 
                         @else
-                            <a href="/follow/{{$userpost->id}}" 
+                            <button
                                 class="
                                 {{Auth::user()->following->contains($userpost->id) ? 'btn btn-outline-dark' : 'btn btn-primary'}}
                                      btn-md rounded"
-                                >
+                                
+                                onclick="follow({{$userpost->id}}, this)">
                                 {{-- jika sudah di follow maka akan tertulis unfollow , sebaliknya --}}
-                                {{Auth::user()->following->contains($userpost->id) ? 'unfollow' : 'follow'}}
-                            </a> 
+                                {{Auth::user()->following->contains($userpost->id) ? 'Berhenti Mengikuti' : 'Ikuti'}}
+                            </button> 
                         @endif
+
+                        <script>
+                            function follow(id,el)
+                            {
+                                fetch('/follow/' + id)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        el.innerText = (data.status == 'Follow') ? 'Berhenti Mengikuti' : 'Ikuti' 
+                                    });
+                            }
+                        </script>
 
                     </div>
                     <div class="mx-3 d-flex justify-content-around">
                         <p>Kiriman 0</p>
-                        <p>Pengikut 0</p>
-                        <p>Diikuti 0</p>
+                        <p>Pengikut 3</p>
+                        <p>Diikuti 2</p>
                     </div>
                     <div>
                         <p class="mx-5">{{$user->fullname}} <br> {{$user->bio}}</p>
